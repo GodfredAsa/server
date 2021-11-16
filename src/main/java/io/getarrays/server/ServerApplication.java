@@ -22,46 +22,53 @@ public class ServerApplication {
 @Bean
 	CommandLineRunner run(ServerRepo serverRepo) {
 		return args -> {
-			serverRepo.save(new Server(null,
-					"192.168.1.160",
-					"Ubuntu Linux",
-					"16GB",
-					"Personal Computer",
-					"http://localhost:8080/server/image/server1.png",
-					Status.SERVER_UP));
+//			serverRepo.save(new Server(null,
+//					"192.168.1.160",
+//					"Ubuntu Linux",
+//					"16GB",
+//					"Personal Computer",
+//					"http://localhost:8080/server/image/server1.png",
+//					Status.SERVER_UP));
+
+//			serverRepo.save(new Server(null,
+//					"10.0.0.0",
+//					"Windows",
+//					"32GB",
+//					"Turntabl",
+//					"http://localhost:8080/server/image/server2.png",
+//					Status.SERVER_DOWN));
+
+//			serverRepo.save(new Server(null,
+//					"172.16.0.0",
+//					"Macintosh",
+//					"16GB",
+//					"Super Computer",
+//					"http://localhost:8080/server/image/server3.png",
+//					Status.SERVER_UP));
+
+//			serverRepo.save(new Server(null,
+//					"192.168.0.0",
+//					"Amalitech PC",
+//					"32GB",
+//					"Developer Machine",
+//					"http://localhost:8080/server/image/server4.png",
+//					Status.SERVER_UP));
 
 			serverRepo.save(new Server(null,
-					"10.0.0.0",
-					"Windows",
-					"32GB",
-					"Turntabl",
-					"http://localhost:8080/server/image/server2.png",
-					Status.SERVER_DOWN));
-
-			serverRepo.save(new Server(null,
-					"172.16.0.0",
-					"Macintosh",
-					"16GB",
-					"Super Computer",
-					"http://localhost:8080/server/image/server3.png",
-					Status.SERVER_UP));
-
-			serverRepo.save(new Server(null,
-					"192.168.0.0",
-					"Amalitech PC",
-					"32GB",
+					"192.168.10.8",
+					"DeGREAT PC",
+					"64GB",
 					"Developer Machine",
-					"http://localhost:8080/server/image/server4.png",
+					"http://localhost:8080/server/image/server5.png",
 					Status.SERVER_UP));
 
-			serverRepo.save(new Server(null,
-					"192.158.1.169",
-					"Sumsung",
-					"16GB",
-					"Gaming",
-					"http://localhost:8080/server/image/server5.png",
-					Status.SERVER_DOWN));
-
+//			serverRepo.save(new Server(null,
+//					"192.158.1.169",
+//					"Sumsung",
+//					"16GB",
+//					"Gaming",
+//					"http://localhost:8080/server/image/server5.png",
+//					Status.SERVER_DOWN));
 		};
 	}
 
