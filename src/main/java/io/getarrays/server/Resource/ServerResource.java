@@ -5,6 +5,7 @@ import io.getarrays.server.Model.Response;
 import io.getarrays.server.Model.Server;
 import io.getarrays.server.Service.Implementation.ServerServiceImplementation;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.sql.Update;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +36,6 @@ public class ServerResource {
                 .status(OK)
                 .statusCode(OK.value())
                 .build()
-
         );
     }
 
@@ -78,7 +78,7 @@ public class ServerResource {
         );
     }
 
-    @DeleteMapping("/get/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Response> deleteServer(@PathVariable("id") Long id){
 //        Server server = serverService.ping(ipAddress);
         return ResponseEntity.ok(Response.builder()
@@ -91,9 +91,28 @@ public class ServerResource {
         );
     }
 
-    @GetMapping(path = "/image/{imageName}", produces = IMAGE_PNG_VALUE)
-    public byte[] getServerImage(@PathVariable("id") String imageName) throws IOException {
-        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "Downloads/images/" + imageName));
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Response> updateServer(@RequestBody @Valid Server server){
+        return ResponseEntity
+                .ok(Response.builder()
+                        .timeStamp(now())
+                        .data(Map.of("server", serverService.update(server)))
+                        .message("Server Updated")
+                        .status(CREATED)
+                        .statusCode(CREATED.value())
+                        .build()
+                );
     }
+
+    @GetMapping(path = "/image/{imageName}", produces = IMAGE_PNG_VALUE)
+    public byte[] getServerImage(@PathVariable("imageName") String imageName) throws IOException {
+        return Files.readAllBytes(Paths.get(System.getProperty("user.home")
+                + "/Downloads/image/" + imageName));
+    }
+
+//    @GetMapping(path = "/image/{imageName}", produces = IMAGE_PNG_VALUE)
+//    public String getServerImage(@PathVariable("imageName") String imageName) throws IOException {
+//        return imageName;
+//    }
 
 }

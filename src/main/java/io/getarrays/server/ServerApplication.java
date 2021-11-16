@@ -54,13 +54,13 @@ public class ServerApplication {
 //					"http://localhost:8080/server/image/server4.png",
 //					Status.SERVER_UP));
 
-			serverRepo.save(new Server(null,
-					"192.168.10.8",
-					"DeGREAT PC",
-					"64GB",
-					"Developer Machine",
-					"http://localhost:8080/server/image/server5.png",
-					Status.SERVER_UP));
+//			serverRepo.save(new Server(null,
+//					"192.168.10.8",
+//					"DeGREAT PC",
+//					"64GB",
+//					"Developer Machine",
+//					"http://localhost:8080/server/image/server5.png",
+//					Status.SERVER_UP));
 
 //			serverRepo.save(new Server(null,
 //					"192.158.1.169",
